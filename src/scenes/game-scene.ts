@@ -21,7 +21,7 @@ class MapObject {
     // in cells
     readonly size: Phaser.Structs.Size,
     readonly color: number,
-  ) { }
+  ) {}
 }
 
 class CheckeredMap {
@@ -67,7 +67,10 @@ export class GameScene extends Phaser.Scene {
   public create(): void {
     const grid = this.add.grid(1000, 500, 1000, 1000, 100, 100, null, null, 0xff0000);
 
-    const map = new CheckeredMap(new Phaser.Structs.Size(10, 10), [new MapObject(1, 1, new Phaser.Structs.Size(1, 1), 0xa00000), new MapObject(4, 3, new Phaser.Structs.Size(2, 1), 0xf0f000)]);
+    const map = new CheckeredMap(new Phaser.Structs.Size(10, 10), [
+      new MapObject(1, 1, new Phaser.Structs.Size(1, 1), 0xa00000),
+      new MapObject(4, 3, new Phaser.Structs.Size(2, 1), 0xf0f000),
+    ]);
     map.objects.forEach((obj) => {
       for (let i = 0; i < obj.size.width; i++) {
         const x = obj.x + i;
