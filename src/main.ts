@@ -29,3 +29,7 @@ export const game = new Phaser.Game(gameConfig);
 window.addEventListener('resize', () => {
   game.scale.refresh();
 });
+
+const realy_bad_code = 3+5
+
+console.log(realy_bad_code)
